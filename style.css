@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --violet: hsl(263, 55%, 52%);
+    --grayish_blue: hsl(217, 19%, 35%);
+    --blackish_blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --light_gray: hsl(0, 0%, 81%);
+    --light_grayish_blue: hsl(210, 46%, 95%);
+
+    --ff: "Barlow Semi Condensed", sans-serif;
+
+    --fw-500: 500;
+    --fw-600: 600;
+
+    --fs-300: 0.650rem;
+    --fs-400: 0.850rem;
+    --fs-500: 1.250rem;
+}
+
+body {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-size: var(--fs-400);
+    background-color: var(--light_grayish_blue);
+}
+
+.card-wraper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "daniel daniel jonathan kira"
+        "jeanette patrick patrick kira";
+    gap: 2rem;
+    max-width: 70rem;
+    font-family: var(--ff);
+}
+
+.quotation {
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 80px;
+}
+
+.card:nth-child(1) {
+    grid-area: daniel;
+    background-color: var(--violet);
+    color: var(--light_grayish_blue);
+}
+
+.card:nth-child(2) {
+    grid-area: jonathan;
+    background-color: var(--grayish_blue);
+    color: var(--light_grayish_blue);
+}
+
+.card:nth-child(3) {
+    grid-area: jeanette;
+    background-color: var(--white);
+    color: var(--grayish_blue);
+}
+
+.card:nth-child(4) {
+    grid-area: patrick;
+    background-color: var(--blackish_blue);
+    color: var(--light_grayish_blue);
+}
+
+.card:nth-child(5) {
+    grid-area: kira;
+    background-color: var(--white);
+    color: var(--grayish_blue);
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.card-header {
+    display: flex;
+    gap: 1rem;
+}
+
+.card img {
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.card>p:nth-child(2) {
+    color: var(--light_grayish_blue);
+    font-size: var(--fs-500);
+    font-weight: var(--fw-600);
+    line-height: 1.25;
+    margin-top: 1rem;
+}
+
+.card>p:nth-child(3) {
+    color: var(--light_grayish_blue);
+    font-size: var(--fs-400);
+    margin-top: 2rem;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+.card:nth-child(3)>p {
+    color: var(--grayish_blue);
+}
+
+.card:nth-child(5)>p {
+    color: var(--grayish_blue);
+}
+
+.name {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-500);
+}
+
+.position {
+    font-size: var(--fs-300);
+    opacity: 0.5;
+}
+
+@media screen and (max-width:428px) {
+    .card-wraper {
+        grid-template-columns: 1fr;
+        grid-template-areas: "daniel"
+            "jonathan"
+            "jeanette"
+            "patrick"
+            "kira";
+        gap: 1.25rem;
+        max-width: 23rem;
+        margin: 1.25rem;
+    }
+}
